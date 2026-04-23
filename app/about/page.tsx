@@ -8,25 +8,58 @@ const team = [
     name: "崔总",
     role: "总经理",
     desc: "20年央视媒体运营经验，深耕品牌传播领域",
-    photo: "/team-cuizong.jpg",
+    icon: (
+      <svg viewBox="0 0 64 64" fill="none" className="w-14 h-14">
+        <circle cx="32" cy="22" r="10" fill="white" fillOpacity="0.9"/>
+        <path d="M12 54c0-11.046 8.954-20 20-20s20 8.954 20 20" fill="white" fillOpacity="0.9"/>
+        <circle cx="46" cy="18" r="6" fill="#e8621a" fillOpacity="0.9"/>
+        <path d="M43 18l2 2 4-4" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+    bg: "from-[#0f2b5c] to-[#1a4080]",
   },
   {
     name: "曹总",
     role: "媒介总监",
     desc: "资深央视资源专家，精通各频道广告排期",
-    photo: "/team-caozong.jpg",
+    icon: (
+      <svg viewBox="0 0 64 64" fill="none" className="w-14 h-14">
+        <circle cx="32" cy="22" r="10" fill="white" fillOpacity="0.9"/>
+        <path d="M12 54c0-11.046 8.954-20 20-20s20 8.954 20 20" fill="white" fillOpacity="0.9"/>
+        <rect x="40" y="10" width="14" height="10" rx="2" fill="#e8621a" fillOpacity="0.9"/>
+        <path d="M43 13h8M43 17h5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+      </svg>
+    ),
+    bg: "from-[#1a3a6e] to-[#0f2b5c]",
   },
   {
     name: "远总",
     role: "策划总经理",
     desc: "品牌全案策划专家，服务过数十个知名品牌",
-    photo: "/team-yuanzong.jpg",
+    icon: (
+      <svg viewBox="0 0 64 64" fill="none" className="w-14 h-14">
+        <circle cx="32" cy="22" r="10" fill="white" fillOpacity="0.9"/>
+        <path d="M12 54c0-11.046 8.954-20 20-20s20 8.954 20 20" fill="white" fillOpacity="0.9"/>
+        <path d="M40 20l3-3 4 4-3 3" fill="#e8621a" fillOpacity="0.9"/>
+        <path d="M40 20l-4 4a2 2 0 000 2.8l1.2 1.2a2 2 0 002.8 0l4-4" fill="#e8621a" fillOpacity="0.9"/>
+        <circle cx="47" cy="13" r="3" fill="#e8621a" fillOpacity="0.9"/>
+      </svg>
+    ),
+    bg: "from-[#0d2550] to-[#1a3a6e]",
   },
   {
     name: "刘总",
     role: "客户总监",
     desc: "客户关系管理专家，全程护航项目执行",
-    photo: "/team-liuzong.jpg",
+    icon: (
+      <svg viewBox="0 0 64 64" fill="none" className="w-14 h-14">
+        <circle cx="32" cy="22" r="10" fill="white" fillOpacity="0.9"/>
+        <path d="M12 54c0-11.046 8.954-20 20-20s20 8.954 20 20" fill="white" fillOpacity="0.9"/>
+        <path d="M40 22c0-1.1.9-2 2-2h6a2 2 0 012 2v2a4 4 0 01-4 4 4 4 0 01-4-4v-2z" fill="#e8621a" fillOpacity="0.9"/>
+        <path d="M44 28v3M41 34h6" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+      </svg>
+    ),
+    bg: "from-[#162f60] to-[#0f2b5c]",
   },
 ];
 
@@ -173,12 +206,8 @@ export default function AboutPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((t) => (
               <div key={t.name} className="text-center group">
-                <div className="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden bg-[#f0f4f8]">
-                  <img
-                    src={t.photo}
-                    alt={t.name}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
-                  />
+                <div className={`w-28 h-28 mx-auto mb-4 rounded-full bg-gradient-to-br ${t.bg} flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-300`}>
+                  {t.icon}
                 </div>
                 <h4 className="font-bold text-[#0f2b5c]">{t.name}</h4>
                 <p className="text-xs text-[#e8621a] font-medium mt-0.5">{t.role}</p>
