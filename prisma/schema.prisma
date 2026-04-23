@@ -1,0 +1,81 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id        String   @id @default(uuid())
+  username  String   @unique
+  password  String
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model News {
+  id        String   @id @default(uuid())
+  title     String
+  content   String
+  cover     String?
+  source    String?
+  type      String   @default("industry")
+  sort     Int      @default(0) // company | industry
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Case {
+  id          String   @id @default(uuid())
+  title       String
+  category    String   @default("其他")
+  tags        String?  // JSON array string, e.g. '["独家冠名","演唱会"]'
+  channel     String?  // e.g. CCTV-3 综艺频道
+  year        String?  // e.g. 2024
+  description String?
+  cover       String?
+  videoUrl    String?
+  content     String?
+  color       String   @default("#1B5FBE") // accent color for card
+  sort        Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Resource {
+  id          String   @id @default(uuid())
+  name        String
+  category    String   @default("节目时段广告") // 节目时段广告 | 主题套装广告 | 创意内容定制 | 新媒体广告
+  channel     String
+  program     String
+  timeSlot    String?
+  description String?
+  price       String?
+  note        String?
+  isHot       Boolean  @default(false)
+  sort        Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Contact {
+  id        String   @id @default(uuid())
+  name      String
+  company   String?
+  phone     String?
+  email     String?
+  message   String
+  status    String   @default("pending")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SiteConfig {
+  id        String   @id @default(uuid())
+  key       String   @unique
+  value     String
+  updatedAt DateTime @updatedAt
+}
