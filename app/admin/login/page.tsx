@@ -35,7 +35,7 @@ export default function LoginPage() {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="bg-white rounded-xl shadow-md p-8 w-full max-w-sm">
         <div className="text-center mb-6">
-          <img src="/logo.png" alt="央信合赢" className="h-12 mx-auto mb-3" />
+          <img src="/company-logo.png" alt="央信合赢" className="h-12 mx-auto mb-3" />
           <h1 className="text-xl font-bold text-gray-800">后台管理</h1>
         </div>
         <form onSubmit={handleSubmit} className="space-y-4">
