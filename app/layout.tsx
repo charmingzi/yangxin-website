@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "央视AAAA级信用广告代理公司，提供央视黄金时段广告资源与融媒体全案传播服务",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", sizes: "any", type: "image/png" },
     ],
     apple: "/apple-touch-icon.png",
   },
