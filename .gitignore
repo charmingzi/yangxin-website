@@ -38,7 +38,7 @@ prisma/*.db
 prisma/*.db-journal
 
 # large media files - use separate hosting
-public/yangxin-promo.mp4
-public/case-video.mp4
+# public/yangxin-promo.mp4  (79MB, re-added 2026-04-27)
+# public/case-video.mp4     (80MB, re-added 2026-04-27)
 public/cctv-building.jpg
 public/cctv-building-thumb.jpg
